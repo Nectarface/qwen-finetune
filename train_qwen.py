@@ -11,6 +11,7 @@ from pathlib import Path
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument('--local_rank', type=int, default=0, help='Local rank for distributed training')
     parser.add_argument('--dataset', type=str, required=True, help='Path to training JSONL')
     parser.add_argument('--output', type=str, default='/workspace/output/qwen3.5-9b-finetuned')
     parser.add_argument('--epochs', type=int, default=3)
